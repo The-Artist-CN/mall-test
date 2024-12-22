@@ -14,6 +14,13 @@ public class CmsPreferenceAreaExample {
         orderCriteria = new ArrayList<>();
     }
 
+    public void setDistinct(boolean distinct) {
+        this.distinct = distinct;
+    }
+
+    public boolean isDistinct() {
+        return distinct;
+    }
 
     protected static abstract class generatedCriteria {
         protected List<Criterion> criteria;
