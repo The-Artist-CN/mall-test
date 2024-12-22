@@ -1,6 +1,7 @@
 package com.aoding.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CmsPreferenceAreaExample {
     protected boolean distinct;
@@ -9,22 +10,15 @@ public class CmsPreferenceAreaExample {
 
     protected List<Criteria> orderCriteria;
 
-    public CmsPreferenceAreaExample(){
+    public CmsPreferenceAreaExample() {
         orderCriteria = new ArrayList<>();
     }
-
-
-
-
-
-
-
 
 
     protected static abstract class generatedCriteria {
         protected List<Criterion> criteria;
 
-        protected generatedCriteria(){
+        protected generatedCriteria() {
             criteria = new ArrayList<>();
         }
 
@@ -79,5 +73,79 @@ public class CmsPreferenceAreaExample {
         public String getTypeHandler() {
             return typeHandler;
         }
+
+
+        protected static abstract class GeneratedCriteria {
+            protected List<Criterion> criteria;
+
+            protected GeneratedCriteria() {
+                super();
+                criteria = new ArrayList<>();
+            }
+
+            public boolean isVaild(){
+                return criteria.size() > 0;
+            }
+
+            public List<Criterion> getAllCriterion(){
+                return criteria;
+            }
+
+            public void addCriterion(String condition) {
+                if (condition == null) {
+                    throw new RuntimeException("condition cant not be null");
+                }
+
+                criteria.add(new Criterion(condition));
+            }
+
+            public void addCriterion(String condition , Object value , String property){
+                if ( value == null ){
+                    throw new RuntimeException("value for"+ property+ "cant be null");
+                }
+                criteria.add(new Criterion(condition , value));
+            }
+
+
+
+        }
+
+        public Criterion(String condition) {
+            super();
+            this.condition = condition;
+            this.typeHandler = null;
+            this.noValue = true;
+        }
+
+
+        public Criterion(String condition, Object value, String typeHandler) {
+            super();
+            this.condition = condition;
+            this.value = value;
+            this.typeHandler = typeHandler;
+            if (value instanceof List<?>) {
+                this.listValue = true;
+            } else {
+                this.singleValue = true;
+            }
+        }
+
+        public Criterion(String condition, Object value) {
+            this(condition, value, null);
+        }
+
+        public Criterion(String condition, Object value, Object secondvalue, String typeHandler) {
+            super();
+            this.condition = condition;
+            this.value = value;
+            this.secondValue = secondvalue;
+            this.typeHandler = typeHandler;
+            this.betweenValue = true;
+        }
+
+        public Criterion(String condition, Object value, Object secondValue) {
+            this(condition, value, secondValue, null);
+        }
+
     }
 }
