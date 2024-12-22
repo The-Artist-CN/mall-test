@@ -14,6 +14,13 @@ public class CmsPreferenceAreaExample {
         orderCriteria = new ArrayList<>();
     }
 
+    public void setOrderByClause(String orderByClause) {
+        this.orderByClause = orderByClause;
+    }
+
+    public String getOrderByClause() {
+        return orderByClause;
+    }
 
     protected static abstract class generatedCriteria {
         protected List<Criterion> criteria;
