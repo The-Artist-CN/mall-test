@@ -91,7 +91,7 @@ public class CmsPreferenceAreaExample {
                 return criteria;
             }
 
-            public void addCriterion(String condition) {
+            protected void addCriterion(String condition) {
                 if (condition == null) {
                     throw new RuntimeException("condition cant not be null");
                 }
@@ -99,15 +99,19 @@ public class CmsPreferenceAreaExample {
                 criteria.add(new Criterion(condition));
             }
 
-            public void addCriterion(String condition , Object value , String property){
+            protected void addCriterion(String condition , Object value , String property){
                 if ( value == null ){
                     throw new RuntimeException("value for"+ property+ "cant be null");
                 }
                 criteria.add(new Criterion(condition , value));
             }
 
-
-
+            protected void addCriterion(String condition, Object value1, Object value2, String property) {
+                if (value1 == null || value2 == null) {
+                    throw new RuntimeException("Between values for " + property + " cannot be null");
+                }
+                criteria.add(new Criterion(condition, value1, value2));
+            }
         }
 
         public Criterion(String condition) {
