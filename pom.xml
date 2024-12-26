@@ -13,6 +13,7 @@
     <modules>
         <module>mall-admin</module>
         <module>mall-mbg</module>
+        <module>mall-common</module>
     </modules>
 
    <parent>
