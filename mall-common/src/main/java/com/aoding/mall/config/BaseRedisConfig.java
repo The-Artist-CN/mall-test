@@ -1,5 +1,7 @@
 package com.aoding.mall.config;
 
+import com.aoding.mall.service.Impl.RedisServiceImpl;
+import com.aoding.mall.service.RedisService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -18,5 +20,9 @@ public class BaseRedisConfig {
         redisTemplate.setHashValueSerializer(redisSerializer);
         redisTemplate.afterPropertiesSet();
         return redisTemplate;
+    }
+    @Bean
+    public RedisService redisService(){
+        return new RedisServiceImpl();
     }
 }
