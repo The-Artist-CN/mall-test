@@ -8,10 +8,10 @@ public class CmsPreferenceAreaExample {
 
     protected boolean distinct;
 
-    protected List<Criteria> oredCriteria;
+    protected List<Criteria> orderCriteria;
 
     public CmsPreferenceAreaExample() {
-        oredCriteria = new ArrayList<>();
+        orderCriteria = new ArrayList<>();
     }
 
     public void setOrderByClause(String orderByClause) {
@@ -31,23 +31,23 @@ public class CmsPreferenceAreaExample {
     }
 
     public List<Criteria> getOredCriteria() {
-        return oredCriteria;
+        return orderCriteria;
     }
 
     public void or(Criteria criteria) {
-        oredCriteria.add(criteria);
+        orderCriteria.add(criteria);
     }
 
     public Criteria or() {
         Criteria criteria = createCriteriaInternal();
-        oredCriteria.add(criteria);
+        orderCriteria.add(criteria);
         return criteria;
     }
 
     public Criteria createCriteria() {
         Criteria criteria = createCriteriaInternal();
-        if (oredCriteria.size() == 0) {
-            oredCriteria.add(criteria);
+        if (orderCriteria.size() == 0) {
+            orderCriteria.add(criteria);
         }
         return criteria;
     }
@@ -58,7 +58,7 @@ public class CmsPreferenceAreaExample {
     }
 
     public void clear() {
-        oredCriteria.clear();
+        orderCriteria.clear();
         orderByClause = null;
         distinct = false;
     }
